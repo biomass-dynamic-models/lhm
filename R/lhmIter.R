@@ -1,7 +1,7 @@
 #' @rdname lhmIter-class
+#' @param .Object object for retun
 #' @param ainf the assumed asymptotic age
 #' @param sr stock recruitment function
-#' @param ... (not used)
 #' @include lhmIter-class.R
 setMethod("initialize", signature = "lhmIter", definition = function(.Object, ainf, sr) {
     
@@ -21,6 +21,5 @@ setMethod("initialize", signature = "lhmIter", definition = function(.Object, ai
         .Object@lhdat[['h']] <- numeric(1)
     }
     
-    .Object
-    
+    return(.Object)
 })

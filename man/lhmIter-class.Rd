@@ -9,11 +9,11 @@
 \S4method{initialize}{lhmIter}(.Object, ainf, sr)
 }
 \arguments{
+\item{.Object}{object for retun}
+
 \item{ainf}{the assumed asymptotic age}
 
 \item{sr}{stock recruitment function}
-
-\item{...}{(not used)}
 }
 \description{
 This is an S4 object class similar to \code{\link{lhm}}. It differs from \code{lhm} in that life-history data are stored as vectors (rather than matrices) and therefore correspond to a single monte-carlo interation only. The vectorisation is necessary for efficient estimation of derived quantities such as \eqn{r} using \code{\link{rCalc}}.
