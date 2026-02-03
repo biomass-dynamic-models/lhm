@@ -1,7 +1,7 @@
 Life history module
 ===================
 <!-- badges: start -->
-[![R-CMD-check (lhm)](https://github.com/biomass-dynamic-models/r-packages/actions/workflows/check-lhm-release.yaml/badge.svg)](https://github.com/biomass-dynamic-models/r-packages/actions/workflows/check-lhm-release.yaml)
+[![R-CMD-check](https://github.com/biomass-dynamic-models/lhm/actions/workflows/check-release.yaml/badge.svg)](https://github.com/biomass-dynamic-models/lhm/actions/workflows/check-release.yaml)
 <!-- badges: end -->
 
 Module for the storage and processing of life-history data, designed to allow the calculation of derived parameters from life-history theory. Currently it allows calculation of the intrinsic growth rate using the Euler-Lotka equation.
