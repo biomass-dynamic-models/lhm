@@ -23,6 +23,9 @@ documentation:
 	Rscript \
 	-e 'if (!requireNamespace("roxygen2")) install.packages("roxygen2")' \
 	-e 'roxygen2::roxygenize()'
+	git add man
+	git commit -m "update documentation"
+	git push origin main
 
 install: build
 	R CMD INSTALL $(PKGNAME)_$(PKGVERS).tar.gz
@@ -30,7 +33,7 @@ install: build
 clean:
 	@rm -rf $(PKGNAME)_$(PKGVERS).tar.gz $(PKGNAME).Rcheck
 	
-pkgdown: documentation
+site: build
 	rm -r docs
 	Rscript \
 	-e 'if (!requireNamespace("pkgdown")) install.packages("pkgdown")' \
