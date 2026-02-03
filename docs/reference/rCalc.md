@@ -10,6 +10,9 @@ rCalc(.Object, ...)
 
 # S4 method for class 'lhm'
 rCalc(.Object)
+
+# S4 method for class 'lhmIter'
+rCalc(.Object)
 ```
 
 ## Arguments
@@ -18,10 +21,14 @@ rCalc(.Object)
 
   an `lhm` object
 
+- ...:
+
+  additional arguments to generic function
+
 ## Value
 
 A
-[`prior`](https://biomass-dynamic-models.github.io/docs/lhm/reference/prior-class.md)
+[`prior`](https://biomass-dynamic-models.github.io/lhm/reference/prior-class.md)
 class object containing a vector of values for \\r\\.
 
 ## Examples

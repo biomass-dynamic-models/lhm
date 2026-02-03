@@ -2,8 +2,18 @@
 
 This function can be used to access or assign the natural mortality at
 age in an
-[`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
 object.
+
+Assignment can be of a list or numeric vector. When a list is assigned
+it should contain a value for `mu`, which is the mean natural mortality
+at age and may or may not be constant across ages.
+
+If the list also contains `cv` then log-normal uncertainty is added
+around the mortality at age. If the list contains `range` then the
+uncertainty is bounded at these values. If `range` is provided but not
+`cv`, and if mortality is constant across ages, then a uniform
+uncertainy is implemented.
 
 ## Usage
 
@@ -27,8 +37,12 @@ nmort(object) <- value
 - object:
 
   a
-  [`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+  [`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
   object
+
+- ...:
+
+  arguments to generic function
 
 - value:
 
@@ -61,18 +75,6 @@ nmort(object) <- value
 
 Accessor function returns a matrix of maturity at age across iterations.
 Assignment function populates the matrix across iterations.
-
-## Details
-
-Assignment can be of a list or numeric vector. When a list is assigned
-it should contain a value for `mu`, which is the mean natural mortality
-at age and may or may not be constant across ages.
-
-If the list also contains `cv` then log-normal uncertainty is added
-around the mortality at age. If the list contains `range` then the
-uncertainty is bounded at these values. If `range` is provided but not
-`cv`, and if mortality is constant across ages, then a uniform
-uncertainy is implemented.
 
 ## Examples
 

@@ -1,8 +1,22 @@
 # Access or assign maturity at age
 
 This function can be used to access or assign the maturity at age in an
-[`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
 object.
+
+Assignment can be of a list or numeric vector. When a list is assigned
+it should provide the \\a\_{crit}\\ and optionally the \\\delta\\
+parameter. If only `acrit` is supplied then maturity is knife-edged at
+that age. If both `acrit` and `delta` are supplied then maturity-at-age
+is calculated as a logistic ogive: \$\$Maturity =
+1/(1+exp((acrit-Age)/delta)).\$\$
+
+Uncertainty accross iterations in the `lhm` object can be included by
+providing a `cv` for each of the parameters. Parameter uncertainty is
+assumed to be log-normal with \\\sigma = \sqrt{ln(1+cv^2)}\\.
+
+When assigning a numeric vector it is assumed that each replicate is
+identical.
 
 ## Usage
 
@@ -26,8 +40,12 @@ maturity(object) <- value
 - object:
 
   a
-  [`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+  [`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
   object
+
+- ...:
+
+  arguments to generic function
 
 - value:
 
@@ -55,22 +73,6 @@ maturity(object) <- value
 
 Accessor function returns a matrix of maturity at age across iterations.
 Assignment function populates the matrix across iterations.
-
-## Details
-
-Assignment can be of a list or numeric vector. When a list is assigned
-it should provide the \\a\_{crit}\\ and optionally the \\\delta\\
-parameter. If only `acrit` is supplied then maturity is knife-edged at
-that age. If both `acrit` and `delta` are supplied then maturity-at-age
-is calculated as a logistic ogive: \$\$Maturity =
-1/(1+exp((acrit-Age)/delta)).\$\$
-
-Uncertainty accross iterations in the `lhm` object can be included by
-providing a `cv` for each of the parameters. Parameter uncertainty is
-assumed to be log-normal with \\\sigma = \sqrt{ln(1+cv^2)}\\.
-
-When assigning a numeric vector it is assumed that each replicate is
-identical.
 
 ## Examples
 

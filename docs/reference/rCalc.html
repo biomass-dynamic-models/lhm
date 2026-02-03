@@ -19,7 +19,7 @@
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/biomass-dynamic-models/r-packages/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/biomass-dynamic-models/lhm/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Calculate the intrinsic growth rate</h1>
-      <small class="dont-index">Source: <a href="https://github.com/biomass-dynamic-models/r-packages/blob/HEAD/R/rCalc.R" class="external-link"><code>R/rCalc.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/biomass-dynamic-models/lhm/blob/HEAD/R/rCalc.R" class="external-link"><code>R/rCalc.R</code></a></small>
       <div class="d-none name"><code>rCalc.Rd</code></div>
     </div>
 
@@ -42,6 +42,9 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rCalc</span><span class="op">(</span><span class="va">.Object</span>, <span class="va">...</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for class 'lhm'</span></span>
+<span><span class="fu">rCalc</span><span class="op">(</span><span class="va">.Object</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for class 'lhmIter'</span></span>
 <span><span class="fu">rCalc</span><span class="op">(</span><span class="va">.Object</span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -51,6 +54,10 @@
 
 <dl><dt id="arg--object">.Object<a class="anchor" aria-label="anchor" href="#arg--object"></a></dt>
 <dd><p>an <code>lhm</code> object</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>additional arguments to generic function</p></dd>
 
 </dl></div>
     <div class="section level2">

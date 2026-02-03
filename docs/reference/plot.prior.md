@@ -7,21 +7,21 @@ class.
 
 ``` r
 # S3 method for class 'prior'
-plot(object, ...)
+plot(x, ...)
 ```
 
 ## Arguments
+
+- x:
+
+  an
+  [`prior`](https://biomass-dynamic-models.github.io/lhm/reference/prior-class.md)
+  object class
 
 - ...:
 
   additional arguments for
   [`hist`](https://rdrr.io/r/graphics/hist.html)
-
-- x:
-
-  an
-  [`prior`](https://biomass-dynamic-models.github.io/docs/lhm/reference/prior-class.md)
-  object class
 
 ## Examples
 

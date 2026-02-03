@@ -1,8 +1,21 @@
 # Access or assign mass at age
 
 This function can be used to access or assign the biomass at age in an
-[`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
 object.
+
+Assignment can be of a list or numeric vector. When a list is assigned
+it should provide the \\a\\ and \\b\\ parameters of the function:
+\$\$Mass = a \* Length ^ b.\$\$
+
+Uncertainty accross iterations in the `lhm` object can be included by
+providing either an overall coefficient of variation (`cv`) or a `cv`
+for each of the parameters. Overall uncertainty is assumed to be
+log-normal with \\\sigma = \sqrt{ln(1+cv^2)}\\. Parameter uncertainty is
+assumed to be normal with \\\sigma = \mu \* cv\\.
+
+When assigning a numeric vector it is assumed that each replicate is
+identical.
 
 ## Usage
 
@@ -26,8 +39,12 @@ mass(object) <- value
 - object:
 
   a
-  [`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+  [`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
   object
+
+- ...:
+
+  arguments to generic function
 
 - value:
 
@@ -55,21 +72,6 @@ mass(object) <- value
 
 Accessor function returns a matrix of mass at age across iterations.
 Assignment function populates the matrix across iterations.
-
-## Details
-
-Assignment can be of a list or numeric vector. When a list is assigned
-it should provide the \\a\\ and \\b\\ parameters of the function:
-\$\$Mass = a \* Length ^ b.\$\$
-
-Uncertainty accross iterations in the `lhm` object can be included by
-providing either an overall coefficient of variation (`cv`) or a `cv`
-for each of the parameters. Overall uncertainty is assumed to be
-log-normal with \\\sigma = \sqrt{ln(1+cv^2)}\\. Parameter uncertainty is
-assumed to be normal with \\\sigma = \mu \* cv\\.
-
-When assigning a numeric vector it is assumed that each replicate is
-identical.
 
 ## Examples
 

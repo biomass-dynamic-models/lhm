@@ -21,6 +21,12 @@ iteration(object, iter)
 
   iteration to be extracted
 
+- ...:
+
+  arguments to generic function
+
 ## Value
 
-An object of class `lhmIter` which contains a single iteration only.
+An object of class
+[`lhmIter-class`](https://biomass-dynamic-models.github.io/lhm/reference/lhmIter-class.md)
+which contains a single iteration only.

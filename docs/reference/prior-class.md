@@ -6,6 +6,16 @@ the intrinsic growth rate \\r\\, and a list of parameters describing the
 associated parameteric distribution. Currently only a log-normal
 distribution is supported.
 
+If `length(x) > 1` then the function creates an object containing values
+of `x`, otherwise it creates a vector of zero's of length equal to `x`.
+
+For example, values for \\r\\ can be simulated directly or generated
+using the
+[`rCalc`](https://biomass-dynamic-models.github.io/lhm/reference/rCalc.md)
+function. The class contains an additional slot to hold parameters of
+the log-normal distribution, which is used by `bdm` to describe the
+prior for \\r\\.
+
 ## Usage
 
 ``` r
@@ -19,17 +29,9 @@ prior(x, ...)
   either an integer specifiying the length of an empty vector or a
   vector of derived values
 
-## Details
+- ...:
 
-If `length(x)>1` then the function creates an object containing values
-of `x`, otherwise it creates a vector of zero's of length equal to `x`.
-
-For example, values for \\r\\ can be simulated directly or generated
-using the
-[`rCalc`](https://biomass-dynamic-models.github.io/docs/lhm/reference/rCalc.md)
-function. The class contains an additional slot to hold parameters of
-the log-normal distribution, which is used by `bdm` to describe the
-prior for \\r\\.
+  additional arguments to generic function
 
 ## Slots
 
@@ -37,7 +39,7 @@ prior for \\r\\.
 
   numeric vector of derived values
 
-- `lognormal.par`:
+- `lognormal_par`:
 
   log-normal distribution parameter values
 

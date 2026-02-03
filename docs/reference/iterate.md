@@ -22,6 +22,10 @@ iterate(object, iter)
 
   number of iterations
 
+- ...:
+
+  arguments to generic function
+
 ## Value
 
 Returns an `lhm` object with life-history data replicated `iter` times

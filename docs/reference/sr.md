@@ -2,8 +2,23 @@
 
 This function can be used to access or assign the stock recruitment
 function in an
-[`lhm`](https://biomass-dynamic-models.github.io/docs/lhm/reference/lhm-class.md)
+[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
 object.
+
+When executing
+[`rCalc`](https://biomass-dynamic-models.github.io/lhm/reference/rCalc.md)
+the recruitment functions are used to calculate the maximum recruits per
+spawner, using steepness and the equilibrium spawning biomass per
+recruit \\SBPR\\. For the Beverton-Holt stock recruitment function
+recruits per spawner is \$\$Max. Recruits Per Spawner = 4h/(SBPR \* (1 -
+h)),\$\$ and for the Ricker function it is \$\$Max. Recruits Per Spawner
+= h^1.25 / (SBPR \* exp(ln(0.2)/0.8)).\$\$ To introduce uncertainty the
+steepness is represented as: \$\$h_i = 0.2 +
+rbeta(\alpha,\beta)(h^{MAX} - 0.2)\$\$ where \\h^{MAX}=1\\ for the
+Beverton-Holt function and \\h^{MAX}\approx 165\\ for the Ricker
+function. The \\\alpha\\ and \\\beta\\ parameters of the \\Beta\\
+distribution are found using a numerical search algorithm to give mean
+and uncertainty values approximately equal to those input.
 
 ## Usage
 
@@ -25,6 +40,10 @@ sr(object) <- value
 
   a `lhm` object
 
+- ...:
+
+  arguments to generic function
+
 - value:
 
   a `list` containing the components `type`, `mu` and `cv`
@@ -43,23 +62,6 @@ sr(object) <- value
 
   :   a list containing the single steepness parameter `h` which
       represents the coefficient of variation
-
-## Details
-
-When executing
-[`rCalc`](https://biomass-dynamic-models.github.io/docs/lhm/reference/rCalc.md)
-the recruitment functions are used to calculate the maximum recruits per
-spawner, using steepness and the equilibrium spawning biomass per
-recruit \\SBPR\\. For the Beverton-Holt stock recruitment function
-recruits per spawner is \$\$Max. Recruits Per Spawner = 4h/(SBPR \* (1 -
-h)),\$\$ and for the Ricker function it is \$\$Max. Recruits Per Spawner
-= h^1.25 / (SBPR \* exp(ln(0.2)/0.8)).\$\$ To introduce uncertainty the
-steepness is represented as: \$\$h_i = 0.2 +
-rbeta(\alpha,\beta)(h^{MAX} - 0.2)\$\$ where \\h^{MAX}=1\\ for the
-Beverton-Holt function and \\h^{MAX}\approx 165\\ for the Ricker
-function. The \\\alpha\\ and \\\beta\\ parameters of the \\Beta\\
-distribution are found using a numerical search algorithm to give mean
-and uncertainty values approximately equal to those input.
 
 ## Examples
 
@@ -89,11 +91,4 @@ sr(dat)
 #>           [,8]      [,9]     [,10]
 #> [1,] 0.8709409 0.6941472 0.7921494
 #> 
-
-# alpha and beta parameters are returned 
-# as invisible objects for diagnostic plots
-.alpha
-#> [1] 16.12317
-.beta
-#> [1] 7.328525
 ```
