@@ -20,6 +20,7 @@ dependencies: documentation
 	-e 'remotes::install_deps(dependencies = TRUE)'
     
 documentation:
+	rm -r man
 	Rscript \
 	-e 'if (!requireNamespace("roxygen2")) install.packages("roxygen2")' \
 	-e 'roxygen2::roxygenize()'
