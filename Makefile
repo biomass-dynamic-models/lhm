@@ -20,13 +20,9 @@ dependencies: documentation
 	-e 'remotes::install_deps(dependencies = TRUE)'
     
 documentation:
-	rm -r man
 	Rscript \
 	-e 'if (!requireNamespace("roxygen2")) install.packages("roxygen2")' \
 	-e 'roxygen2::roxygenize()'
-	git add man
-	git commit -m "update documentation"
-	git push origin main
 
 install: build
 	R CMD INSTALL $(PKGNAME)_$(PKGVERS).tar.gz
