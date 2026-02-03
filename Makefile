@@ -6,7 +6,7 @@ PKGNAME = `sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION`
 PKGVERS = `sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION`
 
 
-all: check
+all: clean check
 
 build: dependencies
 	R CMD build .
@@ -30,7 +30,7 @@ install: build
 clean:
 	@rm -rf $(PKGNAME)_$(PKGVERS).tar.gz $(PKGNAME).Rcheck
 	
-site: build
+site: install
 	rm -r docs
 	Rscript \
 	-e 'if (!requireNamespace("pkgdown")) install.packages("pkgdown")' \
