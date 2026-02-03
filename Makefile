@@ -8,18 +8,18 @@ PKGVERS = `sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION`
 
 all: check
 
-build: install_deps
+build: dependencies
 	R CMD build .
 
 check: build
 	R CMD check $(PKGNAME)_$(PKGVERS).tar.gz
 
-install_deps: install_man
+dependencies: documentation
 	Rscript \
 	-e 'if (!requireNamespace("remotes")) install.packages("remotes")' \
 	-e 'remotes::install_deps(dependencies = TRUE)'
     
-install_man:
+documentation:
 	Rscript \
 	-e 'if (!requireNamespace("roxygen2")) install.packages("roxygen2")' \
 	-e 'roxygen2::roxygenize()'
@@ -30,7 +30,7 @@ install: build
 clean:
 	@rm -rf $(PKGNAME)_$(PKGVERS).tar.gz $(PKGNAME).Rcheck
 	
-pkgdown: install_man
+pkgdown: documentation
 	rm -r docs
 	Rscript \
 	-e 'if (!requireNamespace("pkgdown")) install.packages("pkgdown")' \
