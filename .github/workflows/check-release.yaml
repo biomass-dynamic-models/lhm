@@ -3,9 +3,8 @@
 on:
   workflow_dispatch:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: ["main"]
+    paths: ["DESCRIPTION", "R/**"] 
 
 name: R-CMD-check
 
