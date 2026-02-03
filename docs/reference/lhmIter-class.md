@@ -1,15 +1,15 @@
 # Class containing single iteration of life-history information
 
 This is an S4 object class similar to
-[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md).
+[`lhm`](https://github.com/biomass-dynamic-models/lhm/reference/lhm-class.md).
 It differs from `lhm` in that life-history data are stored as vectors
 (rather than matrices) and therefore correspond to a single monte-carlo
 interation only. The vectorisation is necessary for efficient estimation
 of derived quantities such as \\r\\ using
-[`rCalc`](https://biomass-dynamic-models.github.io/lhm/reference/rCalc.md).
+[`rCalc`](https://github.com/biomass-dynamic-models/lhm/reference/rCalc.md).
 
 Initialisation is through a call to
-[`iteration`](https://biomass-dynamic-models.github.io/lhm/reference/iteration.md),
+[`iteration`](https://github.com/biomass-dynamic-models/lhm/reference/iteration.md),
 which will extract a single iteration from an `lhm` object.
 
 ## Usage
@@ -53,6 +53,6 @@ initialize(.Object, ainf, sr)
 
 ## See also
 
-[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md),
-[`iteration`](https://biomass-dynamic-models.github.io/lhm/reference/iteration.md),
-[`rCalc`](https://biomass-dynamic-models.github.io/lhm/reference/rCalc.md)
+[`lhm`](https://github.com/biomass-dynamic-models/lhm/reference/lhm-class.md),
+[`iteration`](https://github.com/biomass-dynamic-models/lhm/reference/iteration.md),
+[`rCalc`](https://github.com/biomass-dynamic-models/lhm/reference/rCalc.md)

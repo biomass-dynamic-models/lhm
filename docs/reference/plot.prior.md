@@ -15,7 +15,7 @@ plot(x, ...)
 - x:
 
   an
-  [`prior`](https://biomass-dynamic-models.github.io/lhm/reference/prior-class.md)
+  [`prior`](https://github.com/biomass-dynamic-models/lhm/reference/prior-class.md)
   object class
 
 - ...:

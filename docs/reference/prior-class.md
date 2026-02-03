@@ -11,7 +11,7 @@ of `x`, otherwise it creates a vector of zero's of length equal to `x`.
 
 For example, values for \\r\\ can be simulated directly or generated
 using the
-[`rCalc`](https://biomass-dynamic-models.github.io/lhm/reference/rCalc.md)
+[`rCalc`](https://github.com/biomass-dynamic-models/lhm/reference/rCalc.md)
 function. The class contains an additional slot to hold parameters of
 the log-normal distribution, which is used by `bdm` to describe the
 prior for \\r\\.

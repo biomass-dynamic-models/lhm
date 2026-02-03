@@ -28,5 +28,5 @@ iteration(object, iter)
 ## Value
 
 An object of class
-[`lhmIter-class`](https://biomass-dynamic-models.github.io/lhm/reference/lhmIter-class.md)
+[`lhmIter-class`](https://github.com/biomass-dynamic-models/lhm/reference/lhmIter-class.md)
 which contains a single iteration only.

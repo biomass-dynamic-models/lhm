@@ -2,7 +2,7 @@
 
 This function can be used to access or assign the natural mortality at
 age in an
-[`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
+[`lhm`](https://github.com/biomass-dynamic-models/lhm/reference/lhm-class.md)
 object.
 
 Assignment can be of a list or numeric vector. When a list is assigned
@@ -37,7 +37,7 @@ nmort(object) <- value
 - object:
 
   a
-  [`lhm`](https://biomass-dynamic-models.github.io/lhm/reference/lhm-class.md)
+  [`lhm`](https://github.com/biomass-dynamic-models/lhm/reference/lhm-class.md)
   object
 
 - ...:

@@ -3,4 +3,4 @@
 ### All vignettes
 
 - [Life history module
-  (lhm)](https://biomass-dynamic-models.github.io/lhm/articles/lhm.md):
+  (lhm)](https://github.com/biomass-dynamic-models/lhm/articles/lhm.md):
