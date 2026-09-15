@@ -2,7 +2,7 @@ name: Build site
 on:
   workflow_dispatch:
   push:
-    paths: ["docs/**"]
+    paths: ["R/**"]
 
 permissions:
   contents: write
@@ -54,6 +54,7 @@ jobs:
       - name: Build site
         run: |
             pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+            setwd("docs"); x <- readLines("index.html"); x[112] <- "<h2 data-toc-skip>Homepage</h2><ul class=\"list-unstyled\"><li><a href=\"https://biomass-dynamic-models.github.io\" class=\"external-link\">BDM-fish</a></li></ul>"; writeLines(x, con = "index.html")
         shell: Rscript {0}
         
       - name: Push site
