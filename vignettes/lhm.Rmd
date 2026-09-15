@@ -1,5 +1,5 @@
 ---
-title: "Life history module"
+title: "Introduction to lhm"
 author: "Charles T T Edwards"
 date: "`r format(Sys.Date(), '%d-%b-%Y')`"
 output:
@@ -12,32 +12,18 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.path = 'fig/lhm-examples-', fig.width = 6, tidy = TRUE, tidy.opts = list(blank = TRUE, width.cutoff = 95), message = FALSE, warning = FALSE, collapse = TRUE, comment = "#>")
-```
+The life-history module is designed for the storage and processing of life-history data, designed to allow the calculation of derived parameters from life-history theory. Currently it allows calculation of the intrinsic growth rate using the Euler-Lotka equation.
 
-## Development of a prior for the intrinsic growth rate
-If life history data are available we can populate an object of the `lhm` class, which is obtained from the `lhm` (life-history module) package, and is used to store and manipulate life-history data. Monte-Carlo samples are generated, and application of the `lhm::rCalc` function to this class of object calcuates values of the intrinsic growth rate $r$ for each iteration, producing an object of the `prior` class. The `prior` class contains a numeric vector with an additional slot for holding parameters of the associated distribution. Currently only the log-normal distribution is supported, with parameters stored in `object@lognormal_par`.
+Outputs from this package are used by the `bdm` package, which implements a  Bayesian biomass dynamic model for estimation of population status using empirical catch and abundance data. In this instance the intrinsic growth rate calculated by `lhm` is used as prior for model fitting by `bdm`.
 
-```{r results='hide', fig.cap='Prior for $r$ generated from life-history data for Chatham Rise hake (New Zealand).'}
-library(lhm)
+Installation
+============
+First, install the `remotes` packages from CRAN:
 
-# initialise lhm data object for calculation of r with uncertainty
-rdat <- lhm(ainf = 100, iter = 200)
+    # Install packages
+    install.packages("remotes")
 
-# then life-history vectors can be assigned to each iteration
-# with or without uncertainty
-nmort(rdat)    <- list(mu = 0.18)
-maturity(rdat) <- c(0.0,0.01,0.02,0.06,0.14,0.28,0.50,0.72,0.86,0.94,0.98,0.99,1.00)
-size(rdat)     <- list(mu = list(Linf = 106.5, k = 0.229, t0 = 0.01))
-mass(rdat)     <- list(mu = list(a = 1.88e-9, b = 3.305))
-sr(rdat)       <- list(type = 'BH', mu = 0.90, cv = 0.10)
+Then install `lhm` directly from GitHub:
 
-# calculate r prior and fit log-normal distribution
-r <- rCalc(rdat)
-
-```{r}
-plot(r)
-```
-
-
+    # remotes command to get lhm from GitHub
+    remotes::install_github("biomass-dynamic-models/lhm")
