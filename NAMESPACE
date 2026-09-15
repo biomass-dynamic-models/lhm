@@ -20,15 +20,19 @@ export(survivorship)
 exportClasses(lhm)
 exportClasses(prior)
 import(methods)
-importFrom(graphics,axis)
-importFrom(graphics,curve)
-importFrom(graphics,hist)
-importFrom(graphics,plot)
-importFrom(stats,dlnorm)
-importFrom(stats,optim)
-importFrom(stats,rbeta)
-importFrom(stats,rlnorm)
-importFrom(stats,rnorm)
-importFrom(stats,runif)
-importFrom(stats,sd)
-importFrom(stats,uniroot)
+importFrom(graphics,
+  axis,
+  curve,
+  hist,
+  plot
+)
+importFrom(stats,
+  dlnorm,
+  optim,
+  rbeta,
+  rlnorm,
+  rnorm,
+  runif,
+  sd,
+  uniroot
+)
